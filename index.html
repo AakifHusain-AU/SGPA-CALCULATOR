@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA Calculator</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --bodcolor:#6219b5;
+}
+html{
+    scroll-behavior: smooth;
+}
+.profile{
+    height: 400px;
+    border-radius: 15px;
+    margin: 30px;
+    background-color: #0056b3;
+    display: flex;
+    align-self: center;
+}
+@media (max-width:1460px) {
+   .profile{
+    height: 450px;
+   } 
+}
+@media (max-width:1260px) {
+    .profile{
+        height: 500px;
+       } 
+}
+
+.profile_about {
+    padding: 20px;
+    width: 60%;
+    height: 100%;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+   border-top-left-radius: 15px;
+   border-bottom-left-radius: 15px;
+   color: #fff;
+   position: relative;
+}
+@media (max-width:970px){
+    .profile_about{
+        width: 100%;
+        border-radius:15px ;
+    }
+}
+.profile_about h1{
+    font-weight: 600;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+@media (max-width:440px){
+    .profile_about h1{
+       
+        font-size: 25px;
+        
+    }
+}
+.profile_about p{
+    font-size: 15px;
+    display: block;
+    position: absolute;
+    left:5px;
+    top: 40px;
+   
+     display: flex;
+     align-self: center;
+     margin: 100px;
+     background-color: #5DBBDE;
+    padding: 20px;
+    border-radius: 15px;
+    opacity: 0.9;
+}
+
+
+@media (max-width:620px){
+    .profile_about p{
+       margin: 40px;
+        overflow: hidden;
+    }
+}
+ @media (max-width:440px){
+    .profile_about p{
+        font-size: 12px;
+        padding: 10px;
+    }
+} 
+.profile_about button{
+    position: absolute;
+ 
+    right: 20%;
+    bottom: 30px;
+    background-color: #333;
+    font-size: 20px;
+}
+@media (max-width:1260px) {
+    .profile_about button{
+        position: absolute;
+     
+       
+        bottom: 20px;
+       
+    }
+}
+@media (max-width:1060px){
+    .profile_about button{
+        position: absolute;
+     
+       
+        bottom: 10px;
+       
+    }
+}
+.profile_about button a{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+
+.profile_contact{
+    padding: 20px;
+    width: 40%;
+    height: 100%;
+    background-color:#5adcc4;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+@media (max-width:970px){
+    .profile_contact{
+        display: none;
+    }
+}
+.profile_contact img{
+    height: 320px;
+    width: 360px;
+    border-radius: 20px;
+}
+.profile_icon{
+    color: #0056b3;
+    font-size: 60px;
+    margin: 30px;
+}
+
+@media (max-width:1060px){
+    .profile_contact img{
+        height: 270px;
+        width: 250px;
+    }
+}
+.foot_icon{
+    font-size: 30px;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgba(32, 26, 26, 0.1);
+    text-align: center;
+    border: 2px solid var(--bodcolor);
+
+}
+.container h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+    font-weight: bold;
+}
+input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid var(--bodcolor);
+
+    border-radius: 5px;
+    font-size: 16px;
+}
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+#mid{
+    display: flex;
+   text-align: center;
+    border-radius: 15px;
+    
+}
+@media (max-width:680px){
+    #mid{
+        width: 400px;
+    }
+ 
+}
+@media (max-width:400px){
+    #mid{
+        width: 300px;
+    }
+ #mid img{
+    height: 220px;
+    width: 200px;
+  
+ }
+}
+@media (max-width:360px){
+    #mid{
+        width: 300px;
+    }
+ #mid img{
+    height: 170px;
+    width: 150px;
+  
+ }
+}
+#main_mid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+}
+@media (max-width:970px){
+    #mid{
+        width: 600px;
+    }
+    #main_mid{
+
+        display: flex;
+    }
+}
+
+
+</style>
+</head>
+<body>
+    <div class="profile">
+        <div class="profile_about">
+            <h1>SGPA Calculator</h1>
+            <p id="aakif"> 
+                Hello everyone,
+        
+        Welcome to the SGPA calculator specifically designed for Electronics Department students in the second semester at Aliah University. With this tool, you can calculate your expected SGPA by entering your expected marks for each subject. This calculator ensures accuracy by adhering to the official Aliah University grading guidelines. Get your expected SGPA effortlessly.
+            </p>
+            <button ><a href="#con">Check Now  <i class="fa-solid fa-circle-play"></i></a> </button>
+        <!-- <a href="#con">Check Now <i class="fa-solid fa-circle-play"></i> </a> -->
+        </div>
+        <div class="profile_contact">
+            <!-- <div class="profile_icon">
+             <a href="https://www.linkedin.com/in/aakifhusain" target="_blank" ><i class="fa-brands fa-linkedin"></i></a>
+            </div> -->
+            <img src="University.jpg" alt="University Image">
+        </div>
+    </div>
+
+    <div id="con" class="container">
+        <h1>SGPA Calculator[Aliah University]</h1>
+        <form id="sgpaForm">
+            <label for="semester">Semester:</label>
+            <input type="number" id="semester" min="1" max="8"  class="Eight"  placeholder="Enter your semester"    required>
+            <label for="subject1">Programming for Problem Solving (Marks out of 100):</label>
+            <input type="number" id="subject1" class="subject" min="0" max="100"   placeholder="Enter Marks"   required>
+            <label for="subject2">Basic Electronics Engineering (Marks out of 100):</label>
+            <input type="number" id="subject2"    class="subject"    min="0" max="100"  placeholder="Enter Marks"   required>
+            <label for="subject3">Engineering Mathematics 2 (Marks out of 100):</label>
+            <input type="number" id="subject3"  class="subject"      min="0" max="100"  placeholder="Enter Marks"  required>
+            <label for="subject4">Engineering Chemistry (Marks out of 100):</label>
+            <input type="number" id="subject4"  class="subject"    min="0" max="100"  placeholder="Enter Marks" required>
+            <label for="subject5">Communicative English (Marks out of 100):</label>
+            <input type="number" id="subject5"  class="subject"   min="0" max="100" placeholder="Enter Marks" required>
+            <label for="subject6">Programming for Problem Solving Lab (Marks out of 100):</label>
+            <input type="number" id="subject6"  class="subject"   min="0" max="100"   placeholder="Enter Marks"   required>
+            <label for="subject7">Basic Electronics Engineering Lab (Marks out of 100):</label>
+            <input type="number" id="subject7" class="subject"   min="0" max="100"   placeholder="Enter Marks"  required>
+            <label for="subject8">Mechanical Workshop (Marks out of 100):</label>
+            <input type="number" id="subject8" class="subject"  min="0" max="100"  placeholder="Enter Marks"  required>
+            <label for="subject9">Engineering Chemistry Lab (Marks out of 100):</label>
+            <input type="number" id="subject9" class="subject" min="0" max="100"  placeholder="Enter Marks" required>
+            <label for="subject10">Communicative English Lab (Marks out of 100):</label>
+            <input type="number" id="subject10" class="subject" min="0" max="100" placeholder="Enter Marks" required>
+            <button type="button" onclick="calculateSGPA()">Calculate SGPA <i class="fa-solid fa-circle-play"></i></button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <div id="main_mid">
+    <div id="mid" class="profile_contact">
+        <div class="profile_icon">
+         <a href="https://www.linkedin.com/in/aakifhusain" target="_blank" ><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <img src="123.jpg" alt="Aakif">
+    </div>
+</div>
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="090858b9-4c03-4778-9dd3-2d270b3cb671">
+            <label for="name" >Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            <label for="text">Feedback</label>
+            <input type="text" id="Feedback" name="Feedback " placeholder="Enter Your Feedback" required>
+            <input type="hidden" name="redirect"  value="step2.html">
+            <button type="submit">Next <i class="fa-solid fa-circle-play"></i></button>
+        </form>
+    </div>
+    <footer>
+        SGPA Calculator &copy; 2024 | Created by Aakif & Designed by  Rohit
+        <br>
+        Email-aakifhusain35@gmail.com
+        <br>
+        <div class="foot_icon">
+        <a href="https://www.linkedin.com/in/aakifhusain" target="_blank" ><i class="fa-brands fa-linkedin"></i></a>
+       <a href=" https://wa.me/6289454336"  target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
+    </div>
+    </footer>
+
+
+    <!-- <script src="script.js"></script> -->
+    <script>
+           // Define the grade points
+   const gradePoints = [10, 9.5, 8.5, 7.5, 6.5, 5.5, 4.5, 0];
+   
+
+   document.getElementById('semester').addEventListener('input', function() {
+    let inputValue = this.value;
+    if (inputValue > 8 ) {
+      alert('THIS IS VALID ONLY FOR SECOND SEMESTER AS OF NOW, SO PLEASE CHOOSE 2.');
+      this.value = 8;
+    }
+  });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all input elements
+    const inputs = document.querySelectorAll('.subject');
+
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            // Check if the value is greater than 100
+            if (parseFloat(input.value) > 100) {
+                alert('Highest marks of your exam is 100.So Enter valid Number ');
+                input.value = 100;
+            }
+        });
+    });
+});
+
+   function calculateSGPA() {
+       // Get user input
+       const semester = document.getElementById("semester").value;
+       const subjects = [
+           { name: "Programming for Problem Solving", marks: parseFloat(document.getElementById("subject1").value), credits: 3 },
+           { name: "Basic Electronics Engineering", marks: parseFloat(document.getElementById("subject2").value), credits: 3 },
+           { name: "Engineering Mathematics 2", marks: parseFloat(document.getElementById("subject3").value), credits: 4 },
+           { name: "Engineering Chemistry", marks: parseFloat(document.getElementById("subject4").value), credits: 3 },
+           { name: "Communicative English", marks: parseFloat(document.getElementById("subject5").value), credits: 3 },
+           { name: "Programming for Problem Solving Lab", marks: parseFloat(document.getElementById("subject6").value), credits: 2 },
+           { name: "Basic Electronics Engineering Lab", marks: parseFloat(document.getElementById("subject7").value), credits: 1.5 },
+           { name: "Mechanical Workshop", marks: parseFloat(document.getElementById("subject8").value), credits: 2 },
+           { name: "Engineering Chemistry Lab", marks: parseFloat(document.getElementById("subject9").value), credits: 1.5 },
+           { name: "Communicative English Lab", marks: parseFloat(document.getElementById("subject10").value), credits: 1 }
+       ];
+
+       // Calculate the weighted grade points
+       let weightedGradePoints = 0;
+       let totalCredits = 0;
+       for (let i = 0; i < subjects.length; i++) {
+           let index;
+           if (subjects[i].marks >= 95) {
+               index = 0;
+           } else if (subjects[i].marks >= 85) {
+               index = 1;
+           } else if (subjects[i].marks >= 75) {
+               index = 2;
+           } else if (subjects[i].marks >= 65) {
+               index = 3;
+           } else if (subjects[i].marks >= 55) {
+               index = 4;
+           } else if (subjects[i].marks >= 45) {
+               index = 5;
+           } else if (subjects[i].marks >= 35) {
+               index = 6;
+           } else {
+               index = 7;
+           }
+           weightedGradePoints += gradePoints[index] * subjects[i].credits;
+           totalCredits += subjects[i].credits;
+       }
+
+       // Calculate the SGPA
+       const sgpa = weightedGradePoints / totalCredits;
+
+       // Display the SGPA result
+       const resultDiv = document.getElementById("result");
+       resultDiv.innerHTML = `Your SGPA for semester ${semester} is approximately <strong>${sgpa.toFixed(2)}</strong>`;
+   }
+    </script>
+</body>
+</html>
